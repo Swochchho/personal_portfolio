@@ -1,52 +1,47 @@
-import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import { useContent } from '../../context/ContentContext';
-import './style.css';
+import React from "react";
+import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Container, Row, Col } from "react-bootstrap";
+import { useContent } from "../../context/ContentContext";
+import "./style.css";
 
-const Portfolio = () => {
-  const { content } = useContent();
+export const Portfolio = () => {
+  const { content, meta } = useContent();
 
   return (
-    <div className="main-content">
-      <section className="section portfolio-section">
-        <Container>
-          <Row className="mb-5">
-            <Col lg="8">
-              <h1 className="display-4 mb-4">My Portfolio</h1>
-              <hr className="t_border my-4 ml-0 text-left" />
-            </Col>
-          </Row>
-          <Row className="portfolio-items">
-            {content?.dataportfolio?.map((item, index) => (
-              <Col key={index} lg="4" md="6" className="mb-5">
-                <div className="portfolio-item">
-                  <div className="portfolio-img">
-                    <img 
-                      src={item.img || "https://via.placeholder.com/400"} 
-                      alt={item.description} 
-                      className="img-fluid"
-                    />
-                    <div className="portfolio-overlay">
-                      <div className="portfolio-info">
-                        <h5>{item.description || "Project Title"}</h5>
-                        <a 
-                          href={item.link || "#"} 
-                          className="btn btn-sm btn-outline-light"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          View Project
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+    <HelmetProvider>
+      <Container className="About-header mt-5 h-auto">
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title> Portfolio | {meta?.title || "Portfolio"} </title>
+          <meta name="description" content={meta?.description || ""} />
+        </Helmet>
+        <Row className="mb-5 mt-3 pt-md-3">
+          <Col lg="8">
+            <h1 className="display-4 mb-4">Portfolio</h1>
+            <hr className="t_border my-4 ml-0 text-left" />
+          </Col>
+        </Row>
+        <div className="mb-5 po_items_ho">
+          {content?.dataportfolio?.map((data, i) => {
+            return (
+              <div key={i} className="po_item">
+                <img src={data.img || "https://via.placeholder.com/400"} alt={data.description} />
+                <div className="content">
+                  <p>{data.description || "Project description"}</p>
+                  <a 
+                    href={data.link || "#"} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    view project
+                  </a>
                 </div>
-              </Col>
-            ))}
-          </Row>
-        </Container>
-      </section>
-    </div>
+              </div>
+            );
+          })}
+        </div>
+      </Container>
+    </HelmetProvider>
   );
 };
 

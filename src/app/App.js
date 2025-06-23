@@ -2,6 +2,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { BrowserRouter as Router, useLocation } from 'react-router-dom';
 import withRouter from '../hooks/withRouter';
 import AppRoutes from './routes';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Headermain from '../header';
 import AnimatedCursor from '../hooks/AnimatedCursor';
 import './App.css';

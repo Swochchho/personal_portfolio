@@ -3,7 +3,7 @@ import { Tabs, Tab, Form, Button, Alert, Accordion } from 'react-bootstrap';
 import { FiSave, FiLogOut, FiPlus, FiTrash2 } from 'react-icons/fi';
 import AuthContext from '../../context/AuthContext';
 import { useContent } from '../../context/ContentContext';
-import '../../pages/admin/admin.css';
+import './style.css';
 
 const AdminDashboard = () => {
   const { user, logoutUser } = useContext(AuthContext);

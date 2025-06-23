@@ -1,3 +1,4 @@
+/* Your original styles from paste.txt */
 section {
     flex: 1 0 auto;
     position: relative;
@@ -20,7 +21,17 @@ section {
     border-radius: 0;
 }
 
+.btn-contact {
+    background: var(--primary-color);
+    border-radius: 0;
+}
+
 .btn-portfolio a {
+    color: #000;
+    text-decoration: none;
+}
+
+.btn-contact a {
     color: #000;
     text-decoration: none;
 }
@@ -231,4 +242,115 @@ section {
 
 .intro_sec .h_bg-image {
     filter: saturate(0.5);
+}
+
+/* Additional styles for proper spacing and layout */
+.home {
+    padding: 0;
+    margin: 0;
+}
+
+/* Ensure proper Bootstrap classes work */
+.d-block {
+    display: block !important;
+}
+
+.d-lg-flex {
+    display: flex !important;
+}
+
+@media (min-width: 992px) {
+    .d-lg-flex {
+        display: flex !important;
+    }
+}
+
+.align-items-center {
+    align-items: center !important;
+}
+
+.order-1 {
+    order: 1 !important;
+}
+
+.order-2 {
+    order: 2 !important;
+}
+
+@media (min-width: 992px) {
+    .order-lg-1 {
+        order: 1 !important;
+    }
+    .order-lg-2 {
+        order: 2 !important;
+    }
+}
+
+.h-100 {
+    height: 100% !important;
+}
+
+.justify-content-center {
+    justify-content: center !important;
+}
+
+.align-self-center {
+    align-self: center !important;
+}
+
+.mx-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.mb-1x {
+    margin-bottom: 1rem !important;
+}
+
+.pb-5 {
+    padding-bottom: 3rem !important;
+}
+
+.text_2 {
+    text-decoration: none;
+}
+
+/* Ensure fluid typography works */
+.fluidz-48 {
+    font-size: 48px;
+    line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+    .fluidz-48 {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .fluidz-48 {
+        font-size: 28px;
+    }
+}
+
+/* Loading spinner styles */
+.loading-spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid var(--primary-color, #3498db);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
